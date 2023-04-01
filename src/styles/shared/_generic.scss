@@ -1,0 +1,40 @@
+span.word_wrap {
+    overflow: hidden;
+    display: inline-block;
+}
+
+[data-animation="header"] span.word {
+    overflow-y: hidden;
+}
+
+[data-color="green"] {
+    color: #12f0c4;
+}
+
+@keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+
+    to {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marqueeOpp {
+    0% {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    to {
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}

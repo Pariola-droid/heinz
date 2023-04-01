@@ -1,0 +1,21 @@
+@import "./breakpoints";
+
+@mixin flex($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin flex_col() {
+    flex-direction: column;
+}
+
+@mixin grid() {
+    display: grid;
+    place-items: center;
+}
+
+@function toRem($value) {
+    $remValue: (calc($value / 16)) + rem;
+    @return $remValue;
+}

@@ -1,0 +1,38 @@
+@import "../core/variables";
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+[data-animation="header"] span.word {
+    overflow-y: hidden;
+    position: relative;
+}
+
+[data-animation="headerDelayed"] span.word {
+    overflow-y: hidden;
+    position: relative;
+}
+
+.abs {
+    position: absolute;
+}
+
+.rel {
+    position: relative;
+}
+
+%fancyGreen {
+    color: $eneseeGreen1;
+}
+
+%fancyWhite {
+    color: $eneseewhite;
+}
+
+%fancyBlack {
+    color: $eneseeBlack1;
+}
