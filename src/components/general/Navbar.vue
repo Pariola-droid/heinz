@@ -79,139 +79,84 @@ onUnmounted(() => {
 <template>
     <nav class="navbar">
         <div class="navbar_wrapper">
-            <div ref="navLogo" class="navbar_logo">
-                <a href="/"><Logo /></a>
-            </div>
+            <button class="navbar-hamburger">
+                <div class="navbar-hamburger__bars">
+                    <div class="navbar-hamburger__bars_bar1"></div>
+                    <div class="navbar-hamburger__bars_bar2"></div>
+                    <div class="navbar-hamburger__bars_bar3"></div>
+                </div>
+                <span class="navbar-hamburger__text-inner">Menu</span>
+            </button>
 
-            <ul class="navbar_list">
-                <li>
-                    <a href="#who-we-are" data-scroll-to>About Us</a>
+            <!--  -->
+            <ul class="navbar-left">
+                <li data-magnetic data-cursor="-opaque">
+                    <a href="#0">Products</a>
                 </li>
-                <li>
-                    <a href="#what-we-do" data-scroll-to>What We Do</a>
+                <li data-magnetic data-cursor="-opaque">
+                    <a href="#0">Eco Farm</a>
                 </li>
-                <li>
-                    <a
-                        href="https://docs.google.com/forms/d/e/1FAIpQLScyZFhrmHARCB5Ls55Wn7wxR4uZjvXUNEu0VKHISxYp_NsgZQ/viewform"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >Start a Project</a
-                    >
+                <li data-magnetic data-cursor="-opaque">
+                    <a href="#0">Recipes</a>
                 </li>
             </ul>
 
-            <!-- Hamburger -->
-            <button class="navbar_hamburger" id="navbar_burger">
-                <div class="navbar_hamburger__bars">
-                    <div ref="barOne" class="navbar_hamburger__bars_bar1"></div>
-                    <div ref="barTwo" class="navbar_hamburger__bars_bar2"></div>
-                    <div ref="barThree" class="navbar_hamburger__bars_bar3"></div>
-                </div>
-                <span class="navbar_hamburger__text-inner">Menu</span>
-            </button>
-
-            <!-- Drawer -->
-            <div ref="navDrawer" class="navbar_drawer">
-                <ul class="navbar_drawer-inner">
-                    <li id="navbar_burger">
-                        <a href="#who-we-are">About Us</a>
-                    </li>
-                    <li id="navbar_burger">
-                        <a href="#what-we-do">What We Do</a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLScyZFhrmHARCB5Ls55Wn7wxR4uZjvXUNEu0VKHISxYp_NsgZQ/viewform"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            >Start a Project</a
-                        >
-                    </li>
-                </ul>
+            <div class="navbar-logo">
+                <img src="/assets/brand/heinz-logo.svg" alt="Heinz Logo" />
             </div>
+
+            <ul class="navbar-right">
+                <li data-magnetic data-cursor="-opaque">
+                    <a href="#0">about</a>
+                </li>
+                <li data-magnetic data-cursor="-opaque">
+                    <a href="#0">EN</a>
+                </li>
+                <li data-magnetic data-cursor="-opaque">
+                    <a href="#0">Log in</a>
+                </li>
+                <li data-magnetic data-cursor="-opaque">
+                    <a href="#0">CART(0)</a>
+                </li>
+            </ul>
+
+            <!--  -->
+            <button class="navbar-navCart">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4.66774 25.6668V7.00016H9.33441C9.33441 5.71683 9.79135 4.61822 10.7052 3.70433C11.6191 2.79044 12.7177 2.3335 14.0011 2.3335C15.2844 2.3335 16.383 2.79044 17.2969 3.70433C18.2108 4.61822 18.6677 5.71683 18.6677 7.00016H23.3344V25.6668H4.66774ZM11.6677 7.00016H16.3344C16.3344 6.3585 16.1061 5.80939 15.6496 5.35283C15.1922 4.8955 14.6427 4.66683 14.0011 4.66683C13.3594 4.66683 12.8103 4.8955 12.3537 5.35283C11.8964 5.80939 11.6677 6.3585 11.6677 7.00016ZM7.00107 23.3335H21.0011V9.3335H18.6677V12.8335H16.3344V9.3335H11.6677V12.8335H9.33441V9.3335H7.00107V23.3335ZM7.00107 23.3335V9.3335V23.3335Z"
+                        fill="#1E344F"
+                    />
+                </svg>
+            </button>
         </div>
     </nav>
 </template>
 
 <style lang="scss" scoped>
 .navbar {
+    width: 100%;
+    display: grid;
+    place-items: center;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: auto;
-    @include grid;
-    z-index: 99;
-    padding: 45px 0 0;
+    background-color: $creamy-brown;
+    padding: 26px 0 12px;
+    border-bottom: 1px solid $dark-blue;
+    z-index: 9999;
 
-    @include media("<=phone") {
-        padding: 32px 0 0;
+    @include media("<=tablet") {
+        padding: 20px 0 12px;
     }
 
-    &_wrapper {
-        width: 90%;
-        max-width: toRem(1300);
-        height: fit-content;
-        @include flex(space-between, center);
-
-        @include media("<=tablet") {
-            max-width: 90%;
-        }
-    }
-
-    &_logo {
-        cursor: pointer;
-        color: $eneseewhite;
-        transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-        z-index: 9999;
-
-        &.toggle {
-            color: #033027 !important;
-        }
-
-        & a {
-            & svg {
-                height: 30px;
-                width: 270px;
-
-                @include media("<=tablet") {
-                    width: 150px;
-                    height: 17px;
-                }
-            }
-        }
-    }
-
-    &_list {
-        @include flex(flex-start, center);
-        column-gap: 80px;
-        color: $eneseewhite;
-        transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-        @include media("<=tablet") {
-            display: none;
-        }
-
-        & > li {
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 32px;
-            color: currentColor;
-
-            & > a {
-                color: currentColor;
-            }
-        }
-    }
-
-    &_hamburger {
+    &-hamburger {
         border: 0;
         outline: none;
         display: grid;
         place-items: center;
-        height: 16px;
+        height: fit-content;
         width: 22px;
-        z-index: 9999;
         display: none;
 
         @include media("<=tablet") {
@@ -226,24 +171,23 @@ onUnmounted(() => {
             position: relative;
 
             &_bar1 {
-                height: 1px;
-                width: 24px;
-                background-color: $eneseewhite;
+                height: 3px;
+                width: 22px;
+                background-color: $dark-blue;
                 position: absolute;
-                bottom: 8px;
+                bottom: 4px;
                 transition: 0.4s ease-in;
 
                 &.toggle {
                     transform: rotate(45deg);
-                    background-color: #033027 !important;
                     bottom: unset;
                 }
             }
 
             &_bar2 {
-                height: 1px;
-                width: 24px;
-                background-color: $eneseewhite;
+                height: 3px;
+                width: 22px;
+                background-color: $dark-blue;
                 position: absolute;
                 transition: 0.4s ease-in;
 
@@ -253,16 +197,15 @@ onUnmounted(() => {
             }
 
             &_bar3 {
-                height: 1px;
-                width: 24px;
-                background-color: $eneseewhite;
+                height: 3px;
+                width: 22px;
+                background-color: $dark-blue;
                 position: absolute;
-                top: 8px;
+                top: 4px;
                 transition: 0.4s ease-in;
 
                 &.toggle {
                     transform: rotate(-45deg);
-                    background-color: #033027 !important;
                     top: unset;
                 }
             }
@@ -274,45 +217,389 @@ onUnmounted(() => {
         }
     }
 
-    &_drawer {
-        height: auto;
+    &_wrapper {
         width: 100%;
+        max-width: 90%;
+        // max-width: 1383px;
+        height: fit-content;
+        max-height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media("<=tablet") {
+            max-height: 80px;
+        }
+    }
+
+    &-left {
+        width: max-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include media("<=tablet") {
+            display: none;
+        }
+
+        & li {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 30px;
+            position: relative;
+            display: grid;
+            place-items: center;
+
+            & a {
+                color: $dark-blue;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -5%;
+                width: 0%;
+                height: 5%;
+                background-color: currentColor;
+                transition: 0.5s ease-in;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &:not(:last-of-type) {
+                margin-right: 60px;
+            }
+        }
+    }
+
+    &-logo {
+        height: fit-content;
+        width: max-content;
+
+        & img {
+            max-width: 136px;
+            max-height: 69.63px;
+
+            @include media("<=tablet") {
+                max-width: 75px;
+                max-height: 33px;
+            }
+        }
+    }
+
+    &-right {
+        width: max-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include media("<=tablet") {
+            display: none;
+        }
+
+        & li {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 30px;
+            position: relative;
+            display: grid;
+            place-items: center;
+
+            & a {
+                color: $dark-blue;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -5%;
+                width: 0%;
+                height: 5%;
+                background-color: currentColor;
+                transition: 0.5s ease-in;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+
+            &:not(:last-of-type) {
+                margin-right: 60px;
+            }
+        }
+    }
+
+    &-navCart {
+        height: fit-content;
+        width: fit-content;
         display: none;
-        align-items: flex-start;
-        flex-direction: column;
-        background-color: $eneseewhite;
-        padding: toRem(80) 5% toRem(33);
-        position: fixed;
+
+        @include media("<=tablet") {
+            display: initial;
+        }
+    }
+}
+
+.sideNav {
+    width: 0%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 98;
+    transition: transform 0.5s cubic-bezier(0.36, 0, 0.66, 0);
+    display: none;
+
+    @include media("<=tablet") {
+        display: initial;
+    }
+
+    &.toggle {
+        width: 100%;
+    }
+
+    &_skrim {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
         top: 0;
-        left: 0;
+        right: 0;
+        background: linear-gradient(to right, hsla(220, 13%, 0%, 0.3) 40%, hsla(220, 13%, 0%, 1) 80%);
         z-index: 99;
+        transition: opacity 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+        z-index: -1;
+        opacity: 0;
+        will-change: opacity;
+
+        &.toggle {
+            opacity: 0.3;
+        }
+    }
+
+    &_navContent {
+        width: 656px;
+        height: 100vh;
+        position: fixed;
+        transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
+        transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+        background-color: $creamy-brown;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        will-change: transform;
+        display: grid;
+        place-items: center;
+
+        padding-left: 143px;
+        padding-right: 162px;
+
+        @include media("<=desktop") {
+            padding-top: 118px;
+            padding-bottom: 145px;
+            padding-left: 95px;
+            padding-right: 59px;
+        }
 
         @include media("<=tablet") {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 32px;
         }
 
-        &-inner {
+        &.toggle {
+            transform: translate(0, 0) rotate(0.001deg);
+        }
+
+        &-wrapper {
+            height: fit-content; //100%
             width: 100%;
+            max-width: 351px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0;
+            will-change: opacity;
+            transition: 0.8s ease-in;
+
+            &.toggle {
+                opacity: 1;
+            }
+
+            @include media("<=tablet") {
+                height: fit-content;
+                max-width: 100%;
+            }
+        }
+
+        &-top {
+            width: 100%;
+            max-height: 50px;
             height: fit-content;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
 
-            & li {
-                color: #03211b;
+            @include media("<=phone") {
+                padding-bottom: 16px;
+            }
+
+            & small {
                 font-weight: 400;
-                font-size: toRem(16);
-                line-height: toRem(24);
+                font-size: 16px;
+                line-height: 160%;
+                color: $bloody-red;
+            }
 
-                &:not(:last-of-type) {
-                    margin-bottom: toRem(24);
+            &_line {
+                height: 1px;
+                width: 0%;
+                opacity: 0.3;
+                background-color: $dark-blue;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                will-change: opacity;
+                transition: 1s ease-in;
+
+                &.toggle {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-middle {
+            width: 100%;
+            max-height: 370px;
+            height: fit-content;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            row-gap: 32px;
+
+            @include media("<=phone") {
+                row-gap: 8px;
+            }
+
+            & h4 {
+                font-weight: 500;
+                font-size: 40px;
+                line-height: 48px;
+                text-transform: lowercase;
+                color: $dark-blue;
+                position: relative;
+
+                @include media("<=phone") {
+                    font-size: 28px;
+                    font-weight: 400;
+                    line-height: 160%;
                 }
 
-                &:last-of-type {
-                    color: #09846b !important;
-                    text-decoration-line: underline;
-                    text-underline-offset: 2px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: 40%;
+                    right: 0;
+                    width: 0%;
+                    height: 5%;
+                    background-color: currentColor;
+                    transition: 0.5s ease-in;
                 }
 
-                & a {
-                    color: currentColor;
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &-bottom {
+            margin-top: 60px;
+            width: 100%;
+            max-height: 120px;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 40px;
+
+            @include media("<=phone") {
+                row-gap: 24px;
+            }
+
+            &-up {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                position: relative;
+                padding-bottom: 40px;
+
+                & small {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 160%;
+                    color: $bloody-red;
+                }
+            }
+
+            &-down {
+                width: 100%;
+                height: fit-content;
+                max-height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & small {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 160%;
+                    text-transform: capitalize;
+                    color: $black-secondary;
+                    position: relative;
+                    display: grid;
+                    place-items: center;
+
+                    @include media("<=phone") {
+                        font-size: 16px;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: -5%;
+                        width: 0%;
+                        height: 5%;
+                        background-color: currentColor;
+                        transition: 0.5s ease-in;
+                    }
+
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
