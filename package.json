@@ -9,7 +9,9 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@splidejs/splide": "^4.1.4",
         "gsap": "^3.11.4",
+        "jquery": "^3.6.4",
         "locomotive-scroll": "^4.1.4",
         "loconative-scroll": "https://github.com/quentinhocde/loconative-scroll",
         "null-responsive-vue": "^1.1.4-alpha",
