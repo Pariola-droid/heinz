@@ -1,3 +1,3 @@
-# Enesee - Digital Agency
+# Heinz ~ Stewed Website
 
-Unleash Your Web3 Startup's Potential with Tailored Community and Design Solutions
+Made specifically for you to add flavor and a chef's touch to your stew.
