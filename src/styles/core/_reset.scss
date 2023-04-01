@@ -106,7 +106,7 @@ section {
 }
 
 body {
-    @extend %NeueMontreal;
+    @extend %MadeAvenuePersonalUse;
     line-height: 1;
     color: #ffffff;
     overflow-x: hidden;
@@ -121,7 +121,7 @@ body {
 }
 
 main {
-    @extend %NeueMontreal;
+    @extend %MadeAvenuePersonalUse;
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -154,7 +154,9 @@ button {
     border: 0;
     padding: 0;
     font-family: inherit;
-    color: #0d0d0d;
+    color: #ffffff;
+    cursor: pointer;
+    @extend %Athletics;
 }
 
 a {
@@ -193,6 +195,6 @@ strong {
 }
 
 ::selection {
-    background: #12f0c4;
-    color: #03211b;
+    background-color: $dark-blue;
+    color: #cbd5e1;
 }
