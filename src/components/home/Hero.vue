@@ -49,7 +49,7 @@ onUnmounted(() => {
     <header class="header">
         <div class="header_wrapper">
             <div class="header-content">
-                <h1>
+                <h1 ref="head_one" :data-animation="headAttr">
                     Sholape<br />
                     what did you add to your <span>Stew?</span>
                 </h1>
@@ -115,7 +115,7 @@ onUnmounted(() => {
         & h1 {
             font-weight: 400;
             font-size: 106px; //
-            line-height: 130px;
+            line-height: toRem(110);
             color: $dark-blue;
 
             & span {
@@ -175,6 +175,10 @@ onUnmounted(() => {
         position: absolute;
         right: 0;
         bottom: 0;
+
+        @media screen and (min-height: 800px) {
+            bottom: -55px;
+        }
 
         @include media("<=tablet") {
             position: relative;
