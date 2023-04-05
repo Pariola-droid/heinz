@@ -11,9 +11,14 @@ import Magnetic from "./lib/magnetic";
 // Component
 import Navbar from "./components/general/Navbar.vue";
 import Hero from "./components/home/Hero.vue";
-import Services from "./components/home/Services.vue";
-import Why from "./components/home/Why.vue";
-import ClientWrapper from "./components/home/ClientWrapper.vue";
+import HotSauce from "./components/home/HotSauce.vue";
+import FirstCaption from "./components/home/FirstCaption.vue";
+import SecondCaption from "./components/home/SecondCaption.vue";
+import Subscribe from "./components/home/Subscribe.vue";
+import Showcase from "./components/home/Showcase.vue";
+import Testimonial from "./components/home/Testimonial.vue";
+import Articles from "./components/home/Articles.vue";
+import Discount from "./components/home/Discount.vue";
 import Footer from "./components/general/Footer.vue";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -85,8 +90,13 @@ onUnmounted(() => {
 <template>
     <Navbar />
     <Hero />
-    <Services />
-    <Why />
-    <ClientWrapper />
+    <HotSauce />
+    <FirstCaption />
+    <SecondCaption />
+    <Subscribe />
+    <Showcase />
+    <Testimonial />
+    <Articles />
+    <Discount />
     <Footer />
 </template>
