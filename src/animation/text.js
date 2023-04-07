@@ -12,6 +12,7 @@ export const split = () => {
     const H = document.querySelectorAll("[data-animation='header']");
     const hDelayed = document.querySelectorAll("[data-animation='headerDelayed']");
     const f = document.querySelectorAll("[data-animation='fade']");
+    const fDelayed = document.querySelectorAll("[data-animation='fadeDelayed']");
     //
     const SCNime = document.querySelector(".services-content-nime");
     const SCNimee = document.querySelector(".services-content-nime1");
@@ -226,7 +227,7 @@ export const split = () => {
                 stagger: elem.length > 100 ? 0.01 : 0.02,
                 duration: elem.length > 100 ? 0.5 : 0.4,
                 ease: "easeOut",
-                delay: 2,
+                delay: 2.8,
             });
         });
     });
@@ -251,6 +252,23 @@ export const split = () => {
                 stagger: elem.length > 100 ? 0.01 : 0.02,
                 duration: elem.length > 100 ? 0.5 : 0.6,
                 ease: "easeOut",
+            });
+        });
+    });
+
+    fDelayed.forEach((item) => {
+        gsap.set(item, {
+            autoAlpha: 0,
+            yPercent: 50,
+            transformStyle: "preserve-3d",
+        });
+        IO(item, { threshold: 0.3 }).then(() => {
+            gsap.to(item, {
+                autoAlpha: 1,
+                yPercent: 0,
+                duration: item.length > 100 ? 0.5 : 0.6,
+                ease: "easeOut",
+                delay: 3,
             });
         });
     });

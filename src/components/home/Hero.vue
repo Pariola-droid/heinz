@@ -6,8 +6,9 @@ import { onMounted, ref, onUnmounted } from "@vue/runtime-core";
 gsap.registerPlugin(ScrollTrigger);
 //
 const screenWidth = ref(window.innerWidth);
-const head_one = ref(null);
-const headAttr = ref("headerDelayed");
+// const head_one = ref(null);
+// const headAttr = ref("headerDelayed");
+const home_btn = ref(null);
 
 const updateScreenWidth = () => {
     screenWidth.value = window.innerWidth;
@@ -16,10 +17,10 @@ const updateScreenWidth = () => {
 window.addEventListener("resize", updateScreenWidth);
 
 onMounted(() => {
-    gsap.set(".header_content_btn", { autoAlpha: 0 });
+    gsap.set(home_btn.value, { autoAlpha: 0 });
 
     if (screenWidth.value > 1024) {
-        gsap.to(".header_content_btn", {
+        gsap.to(home_btn.value, {
             duration: 0.5,
             delay: 3.5,
             autoAlpha: 1,
@@ -28,11 +29,11 @@ onMounted(() => {
     }
 
     if (screenWidth.value < 1024) {
-        head_one.value.setAttribute("data-animation", "header");
+        // head_one.value.setAttribute("data-animation", "headerDelayed");
 
-        gsap.to(".header_content_btn", {
-            duration: 0.5,
-            delay: 2,
+        gsap.to(home_btn.value, {
+            duration: 1,
+            delay: 3.5,
             autoAlpha: 1,
             ease: "power2.out",
         });
@@ -49,15 +50,15 @@ onUnmounted(() => {
     <header class="header">
         <div class="header_wrapper">
             <div class="header-content">
-                <h1 ref="head_one" :data-animation="headAttr">
+                <h1 data-animation="headerDelayed">
                     Sholape<br />
                     what did you add to your <span>Stew?</span>
                 </h1>
-                <p>
+                <p data-animation="fadeDelayed">
                     Tired of that question? Heinz's new collection of stew sauces are made specifically for you to add flavor and a chef's touch to
                     your stew.
                 </p>
-                <button>Shop Now</button>
+                <button ref="home_btn">Shop Now</button>
             </div>
         </div>
 
@@ -79,7 +80,7 @@ onUnmounted(() => {
     flex-direction: column;
 
     @include media("<=tablet") {
-        padding-top: 50px;
+        padding-top: toRem(160);
     }
 
     &_wrapper {
@@ -188,11 +189,14 @@ onUnmounted(() => {
             align-items: flex-end;
             justify-content: center;
             flex-direction: column;
+            bottom: 0 !important;
+            margin-top: toRem(80);
         }
 
         @include media("<=phone") {
             max-width: 100%;
             max-height: 400px;
+            margin-top: 0;
         }
 
         & img {
