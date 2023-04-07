@@ -7,12 +7,12 @@ onMounted(() => {});
 <template>
     <section class="discount">
         <div class="discount-text">
-            <h1>BE PART OF OUR CLUB FOR DISCOUNT</h1>
+            <h1 data-animation="header">BE PART OF OUR CLUB FOR DISCOUNT</h1>
         </div>
 
         <form action="" class="discount-form">
             <input type="email" placeholder="Enter your email" />
-            <button type="submit">Enter</button>
+            <button type="submit" data-magnetic>Enter</button>
         </form>
     </section>
 </template>
