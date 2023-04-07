@@ -5,28 +5,28 @@
         <div class="footer_top">
             <div class="footer-menu">
                 <ul class="footer-menu--list">
-                    <li><h3>STORE</h3></li>
+                    <li><h3 data-animation="fade">STORE</h3></li>
                     <li><a href="/">Home</a></li>
                     <li><a href="/">About</a></li>
                     <li><a href="/">Journal</a></li>
                     <li><a href="/">Contact</a></li>
                 </ul>
                 <ul class="footer-menu--list">
-                    <li><h3>SHOP</h3></li>
+                    <li><h3 data-animation="fade">SHOP</h3></li>
                     <li><a href="/">all</a></li>
                     <li><a href="/">Lookbook</a></li>
                     <li><a href="/"> Collections</a></li>
                     <li><a href="/">Featured</a></li>
                 </ul>
                 <ul class="footer-menu--list">
-                    <li><h3>COLLECTIONS</h3></li>
+                    <li><h3 data-animation="fade">COLLECTIONS</h3></li>
                     <li><a href="/">Ketchup</a></li>
                     <li><a href="/">Sauce</a></li>
                     <li><a href="/">Mustard</a></li>
                     <li><a href="/">Mayonnaise</a></li>
                 </ul>
                 <ul class="footer-menu--list">
-                    <li><h3>HELP</h3></li>
+                    <li><h3 data-animation="fade">HELP</h3></li>
                     <li><a href="/">Contact</a></li>
                     <li><a href="/">Login & Account</a></li>
                     <li><a href="/">Privacy Policy</a></li>
@@ -36,10 +36,10 @@
 
             <div class="footer-socials">
                 <div class="footer-socials--text">
-                    <h3>Follow Us on all Socials</h3>
+                    <h3 data-animation="header">Follow Us on all Socials</h3>
                 </div>
                 <ul class="footer-socials--icons">
-                    <li>
+                    <li data-magnetic>
                         <a href="#0"
                             ><svg width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -51,7 +51,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li>
+                    <li data-magnetic>
                         <a href="#0"
                             ><svg width="68" height="67" viewBox="0 0 68 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -63,7 +63,7 @@
                             </svg>
                         </a>
                     </li>
-                    <li>
+                    <li data-magnetic>
                         <a href="#0"
                             ><svg width="68" height="67" viewBox="0 0 68 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
