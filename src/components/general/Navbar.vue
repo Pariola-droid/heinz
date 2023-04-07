@@ -347,9 +347,10 @@ onUnmounted(() => {
             position: relative;
             display: grid;
             place-items: center;
+            color: $dark-blue;
 
             & a {
-                color: $dark-blue;
+                color: currentColor;
             }
 
             &::before {
