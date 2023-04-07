@@ -7,11 +7,11 @@ onMounted(() => {});
 <template>
     <section class="subscribe">
         <div class="subscribe-image">
-            <img src="/assets/components/caption/subscribe-image.jpg" alt="subscribe bg image" data-speed="0.8" />
+            <img src="/assets/components/caption/subscribe-image.jpg" alt="subscribe bg image" />
         </div>
 
         <div class="subscribe-form">
-            <h1>Subscribe to Heinz Premium to Get 20% Off</h1>
+            <h1 data-animation="header">Subscribe to Heinz Premium to Get 20% Off</h1>
             <form action="">
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email Address" />

@@ -58,7 +58,7 @@ onUnmounted(() => {
                     Tired of that question? Heinz's new collection of stew sauces are made specifically for you to add flavor and a chef's touch to
                     your stew.
                 </p>
-                <button ref="home_btn">Shop Now</button>
+                <button ref="home_btn" data-magnetic>Shop Now</button>
             </div>
         </div>
 

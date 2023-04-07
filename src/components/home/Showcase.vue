@@ -6,20 +6,20 @@ onMounted(() => {});
 
 <template>
     <section class="showcase">
-        <div class="showcase_wrapper" data-speed="1.05">
-            <div class="showcase-sc1" data-speed="1.05">
+        <div class="showcase_wrapper">
+            <div class="showcase-sc1" data-scroll data-scroll-speed="1">
                 <img src="/assets/components/showcase/sc1.jpg" alt="showcase image" />
             </div>
-            <div class="showcase-sc2" data-speed="1.05">
+            <div class="showcase-sc2" data-scroll data-scroll-speed="2">
                 <img src="/assets/components/showcase/sc2.jpg" alt="showcase image" />
             </div>
 
-            <h1>Used by the Best Chefs Around The world</h1>
+            <h1 data-animation="header">Used by the Best Chefs Around The world</h1>
 
-            <div class="showcase-sc3" data-speed="0.95">
+            <div class="showcase-sc3" data-scroll data-scroll-speed="-1">
                 <img src="/assets/components/showcase/sc3.jpg" alt="showcase image" />
             </div>
-            <div class="showcase-sc4" data-speed="1.05">
+            <div class="showcase-sc4" data-scroll data-scroll-speed="1">
                 <img src="/assets/components/showcase/sc4.jpg" alt="showcase image" />
             </div>
         </div>

@@ -8,17 +8,17 @@ onMounted(() => {});
     <section class="captionOne">
         <div class="captionOne_wrapper">
             <div class="captionOne-content">
-                <h1>Freshly made from Our Eco Farm</h1>
-                <div class="p">
+                <h1 data-animation="fade">Freshly made from Our Eco Farm</h1>
+                <p class="p" data-animation="paragraph">
                     We are proud to see every spicy sauce being created deep within the farms of Lagos Nigeria, crafted with the best local ball
                     peppers to help create a world class sauce and deliver spiceness to the ingredient.
-                </div>
-                <button>Read more</button>
+                </p>
+                <button data-magnetic>Read more</button>
             </div>
 
             <div class="captionOne-image">
                 <div class="captionOne-image__img">
-                    <img src="/assets/components/caption/caption-image-1.jpg" alt="caption image 1" data-speed="0.5" />
+                    <img src="/assets/components/caption/caption-image-1.jpg" alt="caption image 1" data-scroll data-scroll-speed="1" />
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@ onMounted(() => {});
         & h1 {
             font-weight: 400;
             font-size: 88px;
-            line-height: 111px;
+            line-height: toRem(110);
             color: $dark-blue;
             margin-bottom: 60px;
             max-width: 95%;
@@ -81,7 +81,7 @@ onMounted(() => {});
             font-family: "Athletics";
             font-weight: 400;
             font-size: 24px;
-            line-height: 30px;
+            line-height: toRem(26);
             color: $dark-blue;
             margin-bottom: 60px;
             max-width: 90%;

@@ -6,7 +6,7 @@ onMounted(() => {});
 
 <template>
     <section class="featuredSauce">
-        <div class="featuredSauce-text"><h1>Our Hottest Sauce</h1></div>
+        <div class="featuredSauce-text"><h1 data-animation="header">Our Hottest Sauce</h1></div>
         <!--  -->
         <div class="featuredSauce_border">
             <div class="featuredSauce_wrapper">
@@ -61,7 +61,7 @@ onMounted(() => {});
             </div>
         </div>
         <!--  -->
-        <div class="featuredSauce-btn">
+        <div class="featuredSauce-btn" data-magnetic>
             <button>View More</button>
         </div>
     </section>

@@ -9,17 +9,17 @@ onMounted(() => {});
         <div class="captionTwo_wrapper">
             <div class="captionTwo-image">
                 <div class="captionTwo-image__img">
-                    <img src="/assets/components/caption/caption-image-2.jpg" alt="caption image 2" data-speed="0.5" />
+                    <img src="/assets/components/caption/caption-image-2.jpg" alt="caption image 2" data-scroll data-scroll-speed="1" />
                 </div>
             </div>
 
             <div class="captionTwo-content">
-                <h1>Empowering African Traders</h1>
-                <p>
+                <h1 data-animation="header">Empowering African Traders</h1>
+                <p data-animation="fade">
                     We collaborated with a number of traders, farmers, and food vendors to bring you the best sauce right to your door, using the best
                     local peppers available to make production simple and accessible to all.
                 </p>
-                <button>Read more</button>
+                <button data-magnetic>Read more</button>
             </div>
         </div>
     </section>
@@ -64,7 +64,7 @@ onMounted(() => {});
         & h1 {
             font-weight: 400;
             font-size: 88px;
-            line-height: 111px;
+            line-height: toRem(95);
             color: $dark-blue;
             margin-bottom: 60px;
             max-width: 95%;
