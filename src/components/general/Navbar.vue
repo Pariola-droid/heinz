@@ -178,7 +178,7 @@ onUnmounted(() => {
     background-color: $creamy-brown;
     padding: 26px 0 12px;
     border-bottom: 1px solid $dark-blue;
-    z-index: 9999;
+    z-index: 99;
 
     @include media("<=tablet") {
         padding: 20px 0 12px;
@@ -285,9 +285,10 @@ onUnmounted(() => {
             position: relative;
             display: grid;
             place-items: center;
+            color: $dark-blue;
 
             & a {
-                color: $dark-blue;
+                color: currentColor;
             }
 
             &::before {
