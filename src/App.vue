@@ -9,6 +9,7 @@ import Cursor from "./lib/cursor";
 import Magnetic from "./lib/magnetic";
 
 // Component
+import Loader from "./components/general/Loader.vue";
 import Navbar from "./components/general/Navbar.vue";
 import Hero from "./components/home/Hero.vue";
 import HotSauce from "./components/home/HotSauce.vue";
@@ -63,14 +64,14 @@ onMounted(() => {
     });
 
     if (screenWidth.value > 1024) {
-        // scroll.stop();
-        // document.body.style.cursor = "wait";
-        // window.onload = () => {
-        //     setTimeout(() => {
-        //         document.body.style.cursor = "unset";
-        //         scroll.start();
-        //     }, 2000);
-        // };
+        scroll.stop();
+        document.body.style.cursor = "wait";
+        window.onload = () => {
+            setTimeout(() => {
+                document.body.style.cursor = "unset";
+                scroll.start();
+            }, 2500);
+        };
     }
 
     scroll.on("scroll", ScrollTrigger.update);
@@ -88,6 +89,7 @@ onUnmounted(() => {
 </script>
 
 <template>
+    <Loader />
     <Navbar />
     <Hero />
     <HotSauce />
