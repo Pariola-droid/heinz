@@ -6,7 +6,7 @@ onMounted(() => {});
 
 <template>
     <section class="articles">
-        <div class="articles-text"><h1>Enjoy Our Articles</h1></div>
+        <div class="articles-text"><h1 data-animation="header">Enjoy Our Articles</h1></div>
         <div class="articles_border">
             <div class="articles_wrapper">
                 <div class="articles-blog">
@@ -16,8 +16,8 @@ onMounted(() => {});
 
                     <div class="articles-blog-text">
                         <h3>Learn How Heinz are Empowering Farmers in nigeria</h3>
-                        <p>Farmers in Africa are beign empowered by heinz, we’ve just launched our 2 day summit, to help improve the...</p>
-                        <small
+                        <p>Farmers in Africa are beign empowered by heinz, we&apos;ve just launched our 2 day summit, to help improve the...</p>
+                        <small data-magnetic data-cursor="-opaque"
                             ><b><a href="/">Read Article</a></b></small
                         >
                     </div>
@@ -30,8 +30,8 @@ onMounted(() => {});
 
                     <div class="articles-blog-text">
                         <h3>Learn How Heinz are Empowering Farmers in nigeria</h3>
-                        <p>Farmers in Africa are beign empowered by heinz, we’ve just launched our 2 day summit, to help improve the...</p>
-                        <small
+                        <p>Farmers in Africa are beign empowered by heinz, we&apos;ve just launched our 2 day summit, to help improve the...</p>
+                        <small data-magnetic data-cursor="-opaque"
                             ><b><a href="/">Read Article</a></b></small
                         >
                     </div>
@@ -44,8 +44,8 @@ onMounted(() => {});
 
                     <div class="articles-blog-text">
                         <h3>Learn How Heinz are Empowering Farmers in nigeria</h3>
-                        <p>Farmers in Africa are beign empowered by heinz, we’ve just launched our 2 day summit, to help improve the...</p>
-                        <small
+                        <p>Farmers in Africa are beign empowered by heinz, we&apos;ve just launched our 2 day summit, to help improve the...</p>
+                        <small data-magnetic data-cursor="-opaque"
                             ><b><a href="/">Read Article</a></b></small
                         >
                     </div>
