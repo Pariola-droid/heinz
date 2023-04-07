@@ -17,7 +17,8 @@
         "null-responsive-vue": "^1.1.4-alpha",
         "sass": "^1.58.3",
         "splitting": "^1.0.6",
-        "vue": "^3.2.45"
+        "vue": "^3.2.45",
+        "vue3-lottie": "^2.5.0"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.0.0",

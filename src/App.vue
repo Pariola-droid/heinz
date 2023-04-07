@@ -35,6 +35,10 @@ window.addEventListener("resize", updateScreenWidth);
 onMounted(() => {
     split();
 
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    };
+
     const cursor = new Cursor({
         container: "body",
         speed: 0.7,

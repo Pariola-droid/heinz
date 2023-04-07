@@ -1,7 +1,9 @@
 <script setup>
 import gsap from "gsap";
+import HeinzLogo from "../../../public/assets/brand/heinz.json";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { onMounted, onUnmounted, ref } from "@vue/runtime-core";
+
 // Initialize CSSRulePlugin
 gsap.registerPlugin(CSSRulePlugin);
 //
@@ -9,6 +11,8 @@ const screenWidth = ref(window.innerWidth);
 const updateScreenWidth = () => {
     screenWidth.value = window.innerWidth;
 };
+//
+const lotSize = ref(180);
 
 window.addEventListener("resize", updateScreenWidth);
 
@@ -55,6 +59,8 @@ onMounted(() => {
     }
 
     if (screenWidth.value < 1024) {
+        lotSize.value = 120;
+
         gsap.to(".loader_bottom__progress", 2, {
             css: { width: "100%" },
             ease: "power2.easeIn",
@@ -98,7 +104,7 @@ onUnmounted(() => {
 
         <div class="loader_top">
             <div class="loader_top-logo">
-                <img src="/assets/brand/heinz-logo.svg" alt="Heinz Logo" />
+                <Vue3Lottie :animationData="HeinzLogo" :height="lotSize" :width="lotSize" />
             </div>
 
             <div class="loader_top-random1">
@@ -184,11 +190,6 @@ onUnmounted(() => {
             height: fit-content;
             width: fit-content;
             position: absolute;
-
-            & img {
-                width: 100%;
-                height: 100%;
-            }
         }
 
         &-middle {
