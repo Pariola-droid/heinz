@@ -76,7 +76,7 @@ onMounted(() => {});
             width: 100%;
             max-height: unset;
             height: fit-content;
-            padding: 40px 5% 25px;
+            padding: toRem(40) 5% toRem(40);
         }
 
         & h1 {

@@ -126,7 +126,7 @@ onMounted(() => {});
 
         @include media("<=tablet") {
             width: 100%;
-            padding: 40px 5% 25px;
+            padding: toRem(40) 5% toRem(40);
             border-top: 0;
             border-right: 0;
         }
