@@ -1,14 +1,6 @@
 <script setup>
 import gsap from "gsap";
 import { onMounted, onUnmounted, ref } from "@vue/runtime-core";
-import Logo from "../assets/Logo.vue";
-//
-// const burgerBtn = ref(null);
-const barOne = ref(null);
-const barTwo = ref(null);
-const barThree = ref(null);
-const navLogo = ref(null);
-const navDrawer = ref(null);
 //
 const screenWidth = ref(window.innerWidth);
 const updateScreenWidth = () => {
@@ -22,7 +14,7 @@ onMounted(() => {
         gsap.set(".navbar", { y: -50, autoAlpha: 0 });
         gsap.to(".navbar", {
             duration: 1,
-            delay: 3.5,
+            delay: 3,
             y: 0,
             autoAlpha: 1,
             ease: "power2.out",
@@ -31,41 +23,43 @@ onMounted(() => {
 
     if (screenWidth.value < 1024) {
         gsap.set(".navbar", { y: -50, autoAlpha: 0 });
-        gsap.set(navDrawer.value, { y: -100, autoAlpha: 0 });
-        //
-        const burgerBtns = document.querySelectorAll("#navbar_burger");
+        const burgerBTN = document.querySelector(".navbar-hamburger");
+        const sideNav = document.querySelector(".sideNav");
+        const skrim = document.querySelector(".sideNav_skrim");
+        const sideWrap = document.querySelector(".sideNav_navContent");
+        const sideNavContent = document.querySelector(".sideNav_navContent-wrapper");
+        const sideNavContentLine = document.querySelectorAll(".sideNav_navContent-top_line");
+        const barOne = document.querySelector(".navbar-hamburger__bars_bar1");
+        const barTwo = document.querySelector(".navbar-hamburger__bars_bar2");
+        const barThree = document.querySelector(".navbar-hamburger__bars_bar3");
 
         gsap.to(".navbar", {
             duration: 1,
-            delay: 2,
+            delay: 3.5,
             y: 0,
             autoAlpha: 1,
             ease: "power2.out",
         });
 
-        const navDrop = gsap.from(navDrawer.value, {
-            duration: 0.5,
-            y: 0,
-            autoAlpha: 1,
-            ease: "ease-in-out",
-        });
+        burgerBTN.addEventListener("click", () => {
+            skrim.classList.toggle("toggle");
+            sideWrap.classList.toggle("toggle");
+            sideNav.classList.toggle("toggle");
+            sideNavContent.classList.toggle("toggle");
 
-        Array.from(burgerBtns).forEach(function (burgerBtn) {
-            burgerBtn.addEventListener("click", () => {
-                barOne.value.classList.toggle("toggle");
-                barTwo.value.classList.toggle("toggle");
-                barThree.value.classList.toggle("toggle");
-                //
-                navLogo.value.classList.toggle("toggle");
-                //
-                navDrop.reversed() ? navDrop.play() : navDrop.reverse();
-
-                if (navLogo.value.classList.contains("toggle")) {
-                    document.body.style.overflow = "hidden";
-                } else {
-                    document.body.style.overflow = "auto";
-                }
+            sideNavContentLine.forEach((sideNavContentL) => {
+                sideNavContentL.classList.toggle("toggle");
             });
+
+            barOne.classList.toggle("toggle");
+            barTwo.classList.toggle("toggle");
+            barThree.classList.toggle("toggle");
+
+            if (sideNav.classList.contains("toggle")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "auto";
+            }
         });
     }
 });
@@ -131,6 +125,46 @@ onUnmounted(() => {
             </button>
         </div>
     </nav>
+
+    <!-- == SideNav == -->
+    <div class="sideNav">
+        <div class="sideNav_skrim"></div>
+        <div class="sideNav_navContent">
+            <div class="sideNav_navContent-wrapper">
+                <div class="sideNav_navContent-top">
+                    <small>Menu</small>
+                    <span class="sideNav_navContent-top_line"></span>
+                </div>
+                <!--  -->
+                <div class="sideNav_navContent-middle">
+                    <h4 data-magnetic data-cursor="-opaque" class="active-route">
+                        <a href="/">Home</a>
+                    </h4>
+                </div>
+                <!--  -->
+                <div class="sideNav_navContent-bottom">
+                    <div class="sideNav_navContent-bottom-up">
+                        <small>Follow Us on all Socials</small>
+                        <span class="sideNav_navContent-top_line"></span>
+                    </div>
+                    <div class="sideNav_navContent-bottom-down">
+                        <small data-magnetic data-cursor="-opaque"
+                            ><a href="https://dribbble.com/Swift007" target="_blank" rel="noopener noreferrer">...</a></small
+                        >
+                        <small data-magnetic data-cursor="-opaque"
+                            ><a href="https://www.linkedin.com/in/maurice-victor-869aa8175/" target="_blank" rel="noopener noreferrer">...</a></small
+                        >
+                        <small data-magnetic data-cursor="-opaque"
+                            ><a href="https://www.behance.net/mauriceswift" target="_blank" rel="noopener noreferrer">...</a></small
+                        >
+                        <small data-magnetic data-cursor="-opaque"
+                            ><a href="https://twitter.com/Maur1ce007" target="_blank" rel="noopener noreferrer">...</a></small
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
