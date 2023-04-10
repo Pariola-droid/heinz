@@ -70,12 +70,11 @@ onMounted(() => {
     if (screenWidth.value > 1024) {
         scroll.stop();
         document.body.style.cursor = "wait";
-        window.onload = () => {
-            setTimeout(() => {
-                document.body.style.cursor = "unset";
-                scroll.start();
-            }, 2500);
-        };
+
+        setTimeout(() => {
+            document.body.style.cursor = "unset";
+            scroll.start();
+        }, 2500);
     }
 
     scroll.on("scroll", ScrollTrigger.update);
