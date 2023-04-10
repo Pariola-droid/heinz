@@ -1,6 +1,6 @@
 <script setup>
 import gsap from "gsap";
-import HeinzLogo from "../../../public/assets/brand/heinz.json";
+import HeinzLogo from "../../lotties/heinz.json";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { onMounted, onUnmounted, ref } from "@vue/runtime-core";
 
